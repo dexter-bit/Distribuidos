@@ -45,7 +45,7 @@ public class Middleware {
             Socket cliente = new Socket(hostName, 30001);       
             oos = new ObjectOutputStream(cliente.getOutputStream());// asociar buffer de envio
             System.out.println("Sending request to Socket Server");
-            String input = "pedir Libro"+ ";JDVA;" + libro ;
+            String input = "pedir Libro"+ ";JDVA;" + libro;
             oos.writeObject(input); // mandar la info
             ois = new ObjectInputStream(cliente.getInputStream());// asociar buffer de entrada
             String message = (String) ois.readObject();
@@ -80,7 +80,7 @@ public class Middleware {
             ois.close();
             oos.close();
             cliente.close();
-            return message.substring(0, message.length() -1) + ".";
+            return message.substring(0, message.length() -3) + ".";
         } catch(IOException io) {
             System.out.println("Error creando el socket "+io);
         }    
@@ -133,7 +133,7 @@ public class Middleware {
             ois.close();
             oos.close();
             cliente.close();
-            return message.substring(0, message.length() -1) + ".";
+            return message.substring(0, message.length() -3) + ".";
         } catch(IOException io) {
             System.out.println("Error creando el socket "+io);
         }    
@@ -186,7 +186,7 @@ public class Middleware {
             ois.close();
             oos.close();
             cliente.close();
-            return message.substring(0, message.length() -1) + ".";
+            return message.substring(0, message.length() -3) + ".";
         } catch(IOException io) {
             System.out.println("Error creando el socket "+io);
         }    

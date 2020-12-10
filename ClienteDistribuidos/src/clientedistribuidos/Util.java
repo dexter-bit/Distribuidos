@@ -13,7 +13,7 @@ public class Util {
     public static final String LibreriaA                    = "10.2.126.79";    //ip gabriela
     public static final String LibreriaB                    = "10.2.126.86";    //ip dexter windows
     public static final String LibreriaC                    = "10.2.127.251";   //ip dexter ubuntu
-    public static final String Biblioteca                            = "A";
-    //public static final String Biblioteca                            = "B";
+    //public static final String Biblioteca                            = "A";
+    public static final String Biblioteca                            = "B";
     //public static final String Biblioteca                            = "c";
 }
