@@ -53,7 +53,9 @@ public class Middleware {
             ois.close();
             oos.close();
             cliente.close();
-            return message;
+            if (message.equals("true")){
+            return "Se encontro el libro";
+            } else return "No se encontro";
         } catch(IOException io) {
             System.out.println("Error creando el socket "+io);
         }    
@@ -78,7 +80,7 @@ public class Middleware {
             ois.close();
             oos.close();
             cliente.close();
-            return message;
+            return message.substring(0, message.length() -1) + ".";
         } catch(IOException io) {
             System.out.println("Error creando el socket "+io);
         }    
@@ -103,7 +105,9 @@ public class Middleware {
             ois.close();
             oos.close();
             cliente.close();
-            return message;
+            if (message.equals("true")){
+            return "Se encontro el libro";
+            } else return "No se encontro";
         } catch(IOException io) {
             System.out.println("Error creando el socket "+io);
         }    
@@ -129,7 +133,7 @@ public class Middleware {
             ois.close();
             oos.close();
             cliente.close();
-            return message;
+            return message.substring(0, message.length() -1) + ".";
         } catch(IOException io) {
             System.out.println("Error creando el socket "+io);
         }    
@@ -147,14 +151,17 @@ public class Middleware {
             oos = new ObjectOutputStream(cliente.getOutputStream());// asociar buffer de envio
             System.out.println("Sending request to Socket Server");
             String input = "encontrar vol" + ";JDVA;" + Libro;
-            oos.writeObject(input); // mandar la info
+            oos.writeObject(input);                               // mandar la info
             ois = new ObjectInputStream(cliente.getInputStream());// asociar buffer de entrada
             String message = (String) ois.readObject();
             System.out.println(message);
             ois.close();
             oos.close();
             cliente.close();
-            return message;
+            if (message.equals("true")){
+            return "Se encontro el libro";
+            } else return "No se encontro";
+            
         } catch(IOException io) {
             System.out.println("Error creando el socket "+io);
         }    
@@ -179,7 +186,7 @@ public class Middleware {
             ois.close();
             oos.close();
             cliente.close();
-            return message;
+            return message.substring(0, message.length() -1) + ".";
         } catch(IOException io) {
             System.out.println("Error creando el socket "+io);
         }    
